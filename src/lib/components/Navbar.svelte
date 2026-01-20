@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 
 	let isScrolled = $state(false);
+	let isMenuOpen = $state(false);
 
 	onMount(() => {
 		const handleScroll = () => {
@@ -14,6 +15,14 @@
 			window.removeEventListener('scroll', handleScroll);
 		};
 	});
+
+	function toggleMenu() {
+		isMenuOpen = !isMenuOpen;
+	}
+
+	function closeMenu() {
+		isMenuOpen = false;
+	}
 </script>
 
 <nav
@@ -23,7 +32,7 @@
 >
 	<div class="container mx-auto px-6">
 		<div class="flex items-center {isScrolled ? 'justify-center' : 'justify-between'}">
-			<!-- Logo Section - ซ่อนเมื่อ scroll -->
+			<!-- Logo Section - ซ่อนเมื่อ scroll (desktop only) -->
 			{#if !isScrolled}
 				<div class="flex items-center gap-3 transition-opacity duration-300">
 					<div class="flex h-10 w-10 items-center justify-center bg-white">
@@ -31,7 +40,7 @@
 							<path d="M12 2L4 7V17L12 22L20 17V7L12 2Z" stroke="black" stroke-width="2" />
 						</svg>
 					</div>
-					<div>
+					<div class="hidden sm:block">
 						<h1 class="text-lg font-semibold text-white">Flow Design</h1>
 						<span
 							class="inline-flex items-center gap-1 rounded bg-blue-600 px-2 py-0.5 text-xs text-white"
@@ -47,9 +56,9 @@
 				</div>
 			{/if}
 
-			<!-- Menu Items + Hire Me (combined when scrolled) -->
+			<!-- Desktop Menu Items -->
 			<div
-				class="flex items-center gap-6 rounded-xl border border-white/20 bg-white/10 px-8 py-3 backdrop-blur-lg"
+				class="hidden items-center gap-6 rounded-xl border border-white/20 bg-white/10 px-8 py-4 backdrop-blur-lg md:flex"
 			>
 				<a href="#work" class="text-white transition-colors hover:text-gray-300">Work</a>
 				<a href="#capabilities" class="text-white transition-colors hover:text-gray-300"
@@ -70,15 +79,88 @@
 				{/if}
 			</div>
 
-			<!-- Hire Me Button (separate when not scrolled) -->
+			<!-- Hire Me Button (separate when not scrolled) - Desktop only -->
 			{#if !isScrolled}
 				<button
-					class="flex items-center gap-2 rounded-xl border border-white/20 bg-white/10 px-6 py-3 text-white backdrop-blur-lg transition-colors hover:bg-white/20"
+					class="hidden items-center gap-2 rounded-xl border border-white/20 bg-white/10 px-6 py-4 text-white backdrop-blur-lg transition-colors hover:bg-white/20 md:flex"
 				>
 					<span class="h-2 w-2 rounded-full bg-green-500"></span>
 					Hire me
 				</button>
 			{/if}
+
+			<!-- Mobile Hamburger Button -->
+			<button
+				class="flex h-10 w-10 items-center justify-center rounded-lg border border-white/20 bg-white/10 backdrop-blur-lg md:hidden"
+				onclick={toggleMenu}
+				aria-label="Toggle menu"
+			>
+				<div class="relative flex h-5 w-6 flex-col justify-between">
+					<span
+						class="h-0.5 w-full bg-white transition-all duration-300 {isMenuOpen
+							? 'translate-y-2 rotate-45'
+							: ''}"
+					></span>
+					<span
+						class="h-0.5 w-full bg-white transition-opacity duration-300 {isMenuOpen
+							? 'opacity-0'
+							: 'opacity-100'}"
+					></span>
+					<span
+						class="h-0.5 w-full bg-white transition-all duration-300 {isMenuOpen
+							? '-translate-y-2 -rotate-45'
+							: ''}"
+					></span>
+				</div>
+			</button>
 		</div>
+
+		<!-- Mobile Menu -->
+		{#if isMenuOpen}
+			<div
+				class="mt-4 rounded-xl border border-white/20 bg-black/90 p-6 backdrop-blur-lg md:hidden"
+			>
+				<div class="flex flex-col gap-4">
+					<a
+						href="#work"
+						class="text-lg text-white transition-colors hover:text-gray-300"
+						onclick={closeMenu}
+					>
+						Work
+					</a>
+					<a
+						href="#capabilities"
+						class="text-lg text-white transition-colors hover:text-gray-300"
+						onclick={closeMenu}
+					>
+						Capabilities
+					</a>
+					<a
+						href="#process"
+						class="text-lg text-white transition-colors hover:text-gray-300"
+						onclick={closeMenu}
+					>
+						Process
+					</a>
+					<a
+						href="#testimonial"
+						class="text-lg text-white transition-colors hover:text-gray-300"
+						onclick={closeMenu}
+					>
+						Testimonial
+					</a>
+
+					<hr class="border-white/20" />
+
+					<button
+						class="flex items-center gap-2 rounded-xl bg-white px-6 py-3 font-medium text-black transition-colors hover:bg-gray-200"
+						onclick={closeMenu}
+					>
+						<span class="h-2 w-2 rounded-full bg-green-500"></span>
+						Hire me
+					</button>
+				</div>
+			</div>
+		{/if}
 	</div>
 </nav>
