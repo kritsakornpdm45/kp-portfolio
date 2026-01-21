@@ -24,7 +24,7 @@
 
 <div class="min-h-screen bg-black text-white">
 	<!-- Hero Section -->
-	<section class="flex min-h-screen items-center justify-center px-6 pt-10">
+	<section id="resume" class="flex min-h-screen items-center justify-center px-6 pt-10">
 		<div class="mx-auto max-w-4xl text-center">
 			<div class="mb-4">
 				<span class="text-sm tracking-wider text-gray-400 uppercase">Software Engineer</span>
@@ -81,7 +81,7 @@
 				</div>
 				<div class="text-left">
 					<div class="font-semibold">50+ projects completed.</div>
-					<a href="#testimonial" class="text-sm text-gray-400 transition-colors hover:text-white">
+					<a href="#reviews" class="text-sm text-gray-400 transition-colors hover:text-white">
 						Read testimonials →
 					</a>
 				</div>
@@ -109,7 +109,7 @@
 	</section>
 
 	<!-- Work Section -->
-	<section id="work" class="px-6 py-20">
+	<section id="projects" class="px-6 py-20">
 		<div class="mx-auto max-w-6xl">
 			<div class="mb-16 text-center">
 				<h2 class="mb-4 text-4xl font-bold md:text-5xl">Featured Projects</h2>
@@ -137,118 +137,116 @@
 		</div>
 	</section>
 
-	<!-- Capabilities Section -->
-	<section id="capabilities" class="bg-gray-950 px-6 py-20">
-		<div class="mx-auto max-w-6xl">
+	<!-- Skills Section -->
+	<section id="skills" class="overflow-hidden bg-gray-950 py-20">
+		<div class="mb-16 px-6 text-center">
+			<h2 class="mb-4 text-4xl font-bold md:text-5xl">Technical Skills</h2>
+			<p class="text-gray-400">Technologies I work with to build high-performance solutions.</p>
+		</div>
+
+		<!-- Row 1: Sliding Left -->
+		<div class="relative mb-12 flex w-full overflow-hidden py-4">
+			<div class="animate-marquee flex min-w-full shrink-0 items-center justify-around gap-12 px-6">
+				{#each ['react', 'vue', 'angular', 'svelte', 'nextjs', 'gcp', 'tailwindcss', 'redux', 'html', 'css', 'js', 'ts'] as skill}
+					<div class="group relative flex flex-col items-center gap-2">
+						<div
+							class="flex h-20 w-20 transform items-center justify-center rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:border-blue-500/50 group-hover:bg-blue-500/10 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]"
+						>
+							<img
+								src="https://skillicons.dev/icons?i={skill}&theme=dark"
+								alt={skill}
+								class="h-12 w-12 transition-transform duration-300 group-hover:scale-110"
+							/>
+						</div>
+					</div>
+				{/each}
+			</div>
+			<div
+				aria-hidden="true"
+				class="animate-marquee flex min-w-full shrink-0 items-center justify-around gap-12 px-6"
+			>
+				{#each ['react', 'vue', 'angular', 'svelte', 'nextjs', 'gcp', 'tailwindcss', 'redux', 'html', 'css', 'js', 'ts'] as skill}
+					<div class="group relative flex flex-col items-center gap-2">
+						<div
+							class="flex h-20 w-20 transform items-center justify-center rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:border-blue-500/50 group-hover:bg-blue-500/10 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]"
+						>
+							<img
+								src="https://skillicons.dev/icons?i={skill}&theme=dark"
+								alt={skill}
+								class="h-12 w-12 transition-transform duration-300 group-hover:scale-110"
+							/>
+						</div>
+					</div>
+				{/each}
+			</div>
+		</div>
+
+		<!-- Row 2: Sliding Right -->
+		<div class="relative flex w-full overflow-hidden py-4">
+			<div
+				class="animate-marquee-reverse flex min-w-full shrink-0 items-center justify-around gap-12 px-6"
+			>
+				{#each ['nodejs', 'express', 'nestjs', 'python', 'django', 'fastapi', 'postgresql', 'mongodb', 'docker', 'kubernetes', 'aws', 'firebase', 'git', 'linux'] as skill}
+					<div class="group relative flex flex-col items-center gap-2">
+						<div
+							class="flex h-20 w-20 transform items-center justify-center rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:border-purple-500/50 group-hover:bg-purple-500/10 group-hover:shadow-[0_0_20px_rgba(168,85,247,0.3)]"
+						>
+							<img
+								src="https://skillicons.dev/icons?i={skill}&theme=dark"
+								alt={skill}
+								class="h-12 w-12 transition-transform duration-300 group-hover:scale-110"
+							/>
+						</div>
+					</div>
+				{/each}
+			</div>
+			<div
+				aria-hidden="true"
+				class="animate-marquee-reverse flex min-w-full shrink-0 items-center justify-around gap-12 px-6"
+			>
+				{#each ['nodejs', 'express', 'nestjs', 'python', 'django', 'fastapi', 'postgresql', 'mongodb', 'docker', 'kubernetes', 'aws', 'firebase', 'git', 'linux'] as skill}
+					<div class="group relative flex flex-col items-center gap-2">
+						<div
+							class="flex h-20 w-20 transform items-center justify-center rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:border-purple-500/50 group-hover:bg-purple-500/10 group-hover:shadow-[0_0_20px_rgba(168,85,247,0.3)]"
+						>
+							<img
+								src="https://skillicons.dev/icons?i={skill}&theme=dark"
+								alt={skill}
+								class="h-12 w-12 transition-transform duration-300 group-hover:scale-110"
+							/>
+						</div>
+					</div>
+				{/each}
+			</div>
+		</div>
+	</section>
+
+	<!-- Education Section -->
+	<section id="education" class="px-6 py-20">
+		<div class="mx-auto max-w-4xl">
 			<div class="mb-16 text-center">
-				<h2 class="text-4xl font-bold md:text-5xl">What I Do</h2>
+				<h2 class="text-4xl font-bold md:text-5xl">Education</h2>
 			</div>
 
-			<div class="grid gap-8 md:grid-cols-3">
-				{#each capabilities as cap}
+			<div class="space-y-8">
+				<div
+					class="group relative rounded-2xl border border-gray-800 bg-gray-900 p-8 transition-all hover:border-blue-500/50"
+				>
 					<div
-						class="group rounded-2xl border border-gray-800 bg-black p-8 transition-all duration-300 hover:border-blue-500/50"
-					>
-						<div
-							class="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600/20 text-blue-500 transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white"
+						class="absolute top-8 -left-3 hidden h-6 w-6 rounded-full border-4 border-black bg-blue-500 md:block"
+					></div>
+					<div class="mb-4 flex flex-col justify-between gap-2 sm:flex-row sm:items-center">
+						<h3 class="text-xl font-bold text-white">Bachelor of Computer Science</h3>
+						<span class="rounded-full bg-blue-600/20 px-3 py-1 text-sm text-blue-400"
+							>2020 - 2024</span
 						>
-							{#if cap.icon === 'code'}
-								<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2"
-										d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-									/>
-								</svg>
-							{:else if cap.icon === 'server'}
-								<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2"
-										d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"
-									/>
-								</svg>
-							{:else}
-								<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2"
-										d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
-									/>
-								</svg>
-							{/if}
-						</div>
-						<h3 class="mb-3 text-xl font-bold">{cap.title}</h3>
-						<p class="text-sm leading-relaxed text-gray-400">
-							{cap.desc}
-						</p>
 					</div>
-				{/each}
-			</div>
-		</div>
-	</section>
-
-	<!-- Process Section -->
-	<section id="process" class="px-6 py-20">
-		<div class="mx-auto max-w-6xl">
-			<div class="mb-16 text-center">
-				<h2 class="mb-4 text-4xl font-bold md:text-5xl">How I Work</h2>
-				<p class="text-gray-400">
-					A clear, collaborative process from initial discussion to final deployment.
-				</p>
-			</div>
-
-			<div class="grid grid-cols-2 gap-6 md:grid-cols-5">
-				{#each steps as step, i}
-					<div class="group text-center">
-						<div
-							class="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full border border-gray-800 bg-gray-900 font-bold text-green-500 transition-all duration-300 group-hover:bg-green-500 group-hover:text-white"
-						>
-							{String(i + 1).padStart(2, '0')}
-						</div>
-						<h3 class="mb-2 font-bold">{step}</h3>
-						<p class="text-xs text-gray-500">Agile approach</p>
-					</div>
-				{/each}
-			</div>
-		</div>
-	</section>
-
-	<!-- Testimonials Section -->
-	<section id="testimonial" class="bg-gray-950 px-6 py-20">
-		<div class="mx-auto max-w-6xl">
-			<div class="mb-16 text-center">
-				<h2 class="text-4xl font-bold md:text-5xl">What Clients Say</h2>
-			</div>
-
-			<div class="grid gap-8 md:grid-cols-2">
-				{#each [1, 2] as i}
-					<div class="rounded-2xl border border-gray-800 bg-black p-8 shadow-xl">
-						<div class="mb-6 flex gap-1 text-yellow-500">
-							{#each Array(5) as _}
-								<svg class="h-5 w-5 fill-current" viewBox="0 0 20 20">
-									<path
-										d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-									/>
-								</svg>
-							{/each}
-						</div>
-						<p class="mb-8 text-lg leading-relaxed text-gray-300 italic">
-							"Excellent work on our web application. Great understanding of requirements, clean
-							code, and delivered ahead of schedule. Would definitely work together again!"
-						</p>
-						<div class="flex items-center gap-4">
-							<div class="h-12 w-12 rounded-full border border-gray-700 bg-gray-800"></div>
-							<div>
-								<div class="font-bold text-white">Client Name</div>
-								<div class="text-sm tracking-wide text-gray-500 uppercase">CEO, Tech Startup</div>
-							</div>
-						</div>
-					</div>
-				{/each}
+					<div class="mb-4 text-lg text-gray-400">University Name, Location</div>
+					<p class="text-sm leading-relaxed text-gray-500">
+						Relevant Coursework: Data Structures & Algorithms, Database Systems, Web Development,
+						Software Engineering.
+					</p>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -303,11 +301,24 @@
 			transform: translateX(0);
 		}
 		100% {
-			transform: translateX(-50%);
+			transform: translateX(-100%);
+		}
+	}
+
+	@keyframes marquee-reverse {
+		0% {
+			transform: translateX(-100%);
+		}
+		100% {
+			transform: translateX(0);
 		}
 	}
 
 	.animate-marquee {
-		animation: marquee 40s linear infinite;
+		animation: marquee 30s linear infinite;
+	}
+
+	.animate-marquee-reverse {
+		animation: marquee-reverse 30s linear infinite;
 	}
 </style>

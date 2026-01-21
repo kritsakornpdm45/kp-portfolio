@@ -60,14 +60,10 @@
 			<div
 				class="hidden items-center gap-6 rounded-xl border border-white/20 bg-white/10 px-8 py-4 backdrop-blur-lg md:flex"
 			>
-				<a href="#work" class="text-white transition-colors hover:text-gray-300">Work</a>
-				<a href="#capabilities" class="text-white transition-colors hover:text-gray-300"
-					>Capabilities</a
-				>
-				<a href="#process" class="text-white transition-colors hover:text-gray-300">Process</a>
-				<a href="#testimonial" class="text-white transition-colors hover:text-gray-300"
-					>Testimonial</a
-				>
+				<a href="#resume" class="text-white transition-colors hover:text-gray-300">Resume</a>
+				<a href="#projects" class="text-white transition-colors hover:text-gray-300">Projects</a>
+				<a href="#skills" class="text-white transition-colors hover:text-gray-300">Skills</a>
+				<a href="#education" class="text-white transition-colors hover:text-gray-300">Education</a>
 
 				<!-- Hire Me inside menu when scrolled -->
 				{#if isScrolled}
@@ -122,32 +118,32 @@
 			>
 				<div class="flex flex-col gap-4">
 					<a
-						href="#work"
+						href="#resume"
 						class="text-lg text-white transition-colors hover:text-gray-300"
 						onclick={closeMenu}
 					>
-						Work
+						Resume
 					</a>
 					<a
-						href="#capabilities"
+						href="#projects"
 						class="text-lg text-white transition-colors hover:text-gray-300"
 						onclick={closeMenu}
 					>
-						Capabilities
+						Projects
 					</a>
 					<a
-						href="#process"
+						href="#skills"
 						class="text-lg text-white transition-colors hover:text-gray-300"
 						onclick={closeMenu}
 					>
-						Process
+						Skills
 					</a>
 					<a
-						href="#testimonial"
+						href="#education"
 						class="text-lg text-white transition-colors hover:text-gray-300"
 						onclick={closeMenu}
 					>
-						Testimonial
+						Education
 					</a>
 
 					<hr class="border-white/20" />
