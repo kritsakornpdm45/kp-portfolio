@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 
 /* ============================================
-   Base Styles
+   Base Styles & Design Tokens
    ============================================ */
 @layer base {
 	:root {
@@ -11,22 +11,21 @@
 		--font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
 			sans-serif;
 
-		/* Colors - Primary palette */
-		--color-primary-50: oklch(0.97 0.02 250);
-		--color-primary-100: oklch(0.93 0.04 250);
-		--color-primary-200: oklch(0.86 0.08 250);
-		--color-primary-300: oklch(0.76 0.14 250);
-		--color-primary-400: oklch(0.64 0.2 250);
-		--color-primary-500: oklch(0.55 0.24 250);
-		--color-primary-600: oklch(0.48 0.24 250);
-		--color-primary-700: oklch(0.42 0.2 250);
-		--color-primary-800: oklch(0.36 0.16 250);
-		--color-primary-900: oklch(0.3 0.12 250);
+		/* Colors - Primary (Blue) */
+		--color-primary: #3b82f6;
+		--color-primary-light: #60a5fa;
+		--color-primary-dark: #2563eb;
+
+		/* Colors - Accent (Purple) */
+		--color-accent: #8b5cf6;
+		--color-accent-light: #a78bfa;
+		--color-accent-dark: #7c3aed;
 
 		/* Surface colors */
-		--color-surface-dark: oklch(0.13 0 0);
-		--color-surface-darker: oklch(0.1 0 0);
-		--color-surface-card: oklch(0.16 0 0);
+		--color-surface: #0a0a0a;
+		--color-surface-elevated: #111111;
+		--color-surface-card: #18181b;
+		--color-border: rgba(255, 255, 255, 0.1);
 	}
 
 	html {
@@ -34,7 +33,7 @@
 	}
 
 	body {
-		@apply bg-black text-white antialiased;
+		@apply bg-[#0a0a0a] text-white antialiased;
 		font-family: var(--font-sans);
 	}
 
@@ -42,29 +41,113 @@
 	:focus-visible {
 		@apply outline-2 outline-offset-2 outline-blue-500;
 	}
+
+	/* Selection styling */
+	::selection {
+		@apply bg-blue-500/30;
+	}
 }
 
 /* ============================================
    Utility Classes
    ============================================ */
 @layer utilities {
-	/* Glassmorphism effect - reusable across components */
+	/* Glassmorphism effects */
 	.glass {
-		@apply border border-white/20 bg-white/10 backdrop-blur-lg;
+		@apply border border-white/10 bg-white/5 backdrop-blur-xl;
+	}
+
+	.glass-card {
+		@apply rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl;
 	}
 
 	.glass-dark {
-		@apply border border-white/20 bg-black/80 backdrop-blur-lg;
+		@apply border border-white/10 bg-black/50 backdrop-blur-xl;
+	}
+
+	/* Gradient text */
+	.gradient-text {
+		@apply bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent;
+	}
+
+	.gradient-text-blue {
+		@apply bg-linear-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent;
+	}
+
+	/* Glow effects */
+	.glow-blue {
+		box-shadow:
+			0 0 20px rgba(59, 130, 246, 0.3),
+			0 0 40px rgba(59, 130, 246, 0.1);
+	}
+
+	.glow-purple {
+		box-shadow:
+			0 0 20px rgba(139, 92, 246, 0.3),
+			0 0 40px rgba(139, 92, 246, 0.1);
+	}
+
+	.glow-border {
+		@apply border border-blue-500/50;
+		box-shadow:
+			0 0 15px rgba(59, 130, 246, 0.2),
+			inset 0 0 15px rgba(59, 130, 246, 0.05);
+	}
+
+	/* Gradient backgrounds */
+	.bg-gradient-radial {
+		background: radial-gradient(ellipse at center, var(--tw-gradient-from), var(--tw-gradient-to));
+	}
+
+	.bg-mesh {
+		background-image: radial-gradient(at 40% 20%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+			radial-gradient(at 80% 0%, rgba(139, 92, 246, 0.1) 0px, transparent 50%),
+			radial-gradient(at 0% 50%, rgba(59, 130, 246, 0.1) 0px, transparent 50%),
+			radial-gradient(at 80% 50%, rgba(139, 92, 246, 0.08) 0px, transparent 50%),
+			radial-gradient(at 0% 100%, rgba(59, 130, 246, 0.1) 0px, transparent 50%);
 	}
 
 	/* Skip to content link for accessibility */
 	.skip-link {
 		@apply sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-100 focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-black;
 	}
+
+	/* Hover lift effect */
+	.hover-lift {
+		@apply transition-all duration-300;
+	}
+	.hover-lift:hover {
+		@apply -translate-y-1;
+		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+	}
+
+	/* Card shine effect on hover */
+	.card-shine {
+		position: relative;
+		overflow: hidden;
+	}
+	.card-shine::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(
+			90deg,
+			transparent,
+			rgba(255, 255, 255, 0.05),
+			transparent
+		);
+		transition: left 0.6s ease;
+	}
+	.card-shine:hover::before {
+		left: 100%;
+	}
 }
 
 /* ============================================
-   Marquee Animations
+   Animations
    ============================================ */
 @keyframes marquee {
 	0% {
@@ -82,4 +165,85 @@
 	100% {
 		transform: translateX(0);
 	}
+}
+
+@keyframes float {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-10px);
+	}
+}
+
+@keyframes pulse-glow {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.5;
+	}
+}
+
+@keyframes slide-up {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/* Animation utilities */
+@layer utilities {
+	.animate-float {
+		animation: float 6s ease-in-out infinite;
+	}
+
+	.animate-pulse-glow {
+		animation: pulse-glow 2s ease-in-out infinite;
+	}
+
+	.animate-slide-up {
+		animation: slide-up 0.6s ease-out forwards;
+	}
+
+	.animate-fade-in {
+		animation: fade-in 0.5s ease-out forwards;
+	}
+
+	.animate-marquee {
+		animation: marquee 30s linear infinite;
+	}
+
+	.animate-marquee-reverse {
+		animation: marquee-reverse 30s linear infinite;
+	}
+}
+
+/* ============================================
+   Grid Pattern Background
+   ============================================ */
+.bg-grid {
+	background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+	background-size: 60px 60px;
+}
+
+.bg-dots {
+	background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+	background-size: 30px 30px;
 }
