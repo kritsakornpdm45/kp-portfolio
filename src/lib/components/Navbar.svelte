@@ -6,8 +6,7 @@
 		{ href: '#resume', label: 'About' },
 		{ href: '#projects', label: 'Projects' },
 		{ href: '#skills', label: 'Skills' },
-		{ href: '#education', label: 'Education' },
-		{ href: '#contact', label: 'Contact' }
+		{ href: '#education', label: 'Education' }
 	] as const;
 
 	let isScrolled = $state(false);
