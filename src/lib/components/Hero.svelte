@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { profile, stats, socialLinks } from '$lib/data';
+	import { stats, socialLinks } from '$lib/data';
+	import { profile } from '$lib/profile';
 
 	interface Props {
 		onViewWork?: () => void;

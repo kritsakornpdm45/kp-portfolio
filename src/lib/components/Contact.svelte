@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { profile } from '$lib/data';
+	import { profile } from '$lib/profile';
 </script>
 
 <section id="contact" class="relative bg-[#0d0d0d] px-6 py-24">

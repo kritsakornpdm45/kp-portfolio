@@ -9,15 +9,30 @@
 
 	let { project, onClose }: Props = $props();
 	let activeImageIndex = $state(0);
+	let isZoomed = $state(false);
+	let zoomPos = $state({ x: 50, y: 50 });
 
 	$effect(() => {
 		if (project) {
 			activeImageIndex = 0;
+			isZoomed = false;
 			document.body.style.overflow = 'hidden';
 		} else {
 			document.body.style.overflow = 'auto';
 		}
 	});
+
+	function handleMouseMove(e: MouseEvent) {
+		if (!isZoomed) return;
+		const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+		const x = ((e.clientX - rect.left) / rect.width) * 100;
+		const y = ((e.clientY - rect.top) / rect.height) * 100;
+		zoomPos = { x, y };
+	}
+
+	function toggleZoom() {
+		isZoomed = !isZoomed;
+	}
 
 	function nextImage() {
 		if (project) {
@@ -33,6 +48,7 @@
 
 	function setActiveImage(index: number) {
 		activeImageIndex = index;
+		isZoomed = false;
 	}
 </script>
 
@@ -71,47 +87,75 @@
 
 			<div class="flex h-[90vh] flex-col lg:h-auto lg:max-h-[85vh] lg:flex-row">
 				<!-- Left: Image Gallery -->
-				<div class="relative flex-1 bg-black lg:w-3/5">
-					<!-- Main Image -->
-					<div class="relative h-64 w-full bg-gray-900 lg:h-full">
+				<div class="relative flex-1 overflow-hidden bg-black lg:w-3/5">
+					<!-- Main Image Container -->
+					<!-- svelte-ignore a11y_click_events_have_key_events -->
+					<!-- svelte-ignore a11y_no_static_element_interactions -->
+					<div
+						class="relative h-64 w-full cursor-zoom-in bg-gray-900 lg:h-full {isZoomed
+							? 'cursor-zoom-out'
+							: ''}"
+						onclick={toggleZoom}
+						onmousemove={handleMouseMove}
+					>
 						{#key activeImageIndex}
 							<img
 								src={project.gallery[activeImageIndex]}
 								alt={project.title}
-								class="absolute inset-0 h-full w-full object-contain"
+								class="absolute inset-0 h-full w-full object-contain transition-transform duration-300 ease-out"
+								style:transform={isZoomed ? 'scale(2)' : 'scale(1)'}
+								style:transform-origin="{zoomPos.x}% {zoomPos.y}%"
 								transition:fade={{ duration: 300 }}
+								decoding="async"
 							/>
 						{/key}
 
-						<!-- Nav Arrows -->
-						<button
-							class="absolute top-1/2 left-4 -translate-y-1/2 rounded-full bg-black/50 p-2 text-white hover:bg-white/20"
-							onclick={prevImage}
-							aria-label="Previous image"
-						>
-							<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-								><path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M15 19l-7-7 7-7"
-								/></svg
+						<!-- Zoom Hint Overlay -->
+						{#if !isZoomed}
+							<div
+								class="pointer-events-none absolute bottom-20 left-1/2 -translate-x-1/2 rounded-full bg-black/50 px-4 py-2 text-xs text-white opacity-0 backdrop-blur-md transition-opacity lg:bottom-24 lg:group-hover:opacity-100"
 							>
-						</button>
-						<button
-							class="absolute top-1/2 right-4 -translate-y-1/2 rounded-full bg-black/50 p-2 text-white hover:bg-white/20"
-							onclick={nextImage}
-							aria-label="Next image"
-						>
-							<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-								><path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M9 5l7 7-7 7"
-								/></svg
+								Click to zoom & move
+							</div>
+						{/if}
+
+						<!-- Nav Arrows (Hidden when zoomed) -->
+						{#if !isZoomed}
+							<button
+								class="absolute top-1/2 left-4 z-20 -translate-y-1/2 rounded-full bg-black/50 p-2 text-white transition-opacity hover:bg-white/20"
+								onclick={(e) => {
+									e.stopPropagation();
+									prevImage();
+								}}
+								aria-label="Previous image"
 							>
-						</button>
+								<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+									><path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M15 19l-7-7 7-7"
+									/></svg
+								>
+							</button>
+							<button
+								class="absolute top-1/2 right-4 z-20 -translate-y-1/2 rounded-full bg-black/50 p-2 text-white transition-opacity hover:bg-white/20"
+								onclick={(e) => {
+									e.stopPropagation();
+									nextImage();
+								}}
+								aria-label="Next image"
+							>
+								<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+									><path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M9 5l7 7-7 7"
+									/></svg
+								>
+							</button>
+						{/if}
 					</div>
 
 					<!-- Thumbnails -->
@@ -126,7 +170,13 @@
 									: 'border-transparent opacity-50 hover:opacity-100'}"
 								onclick={() => setActiveImage(i)}
 							>
-								<img src={img} alt="" class="h-full w-full object-cover" />
+								<img
+									src={img}
+									alt=""
+									class="h-full w-full object-cover"
+									loading="lazy"
+									decoding="async"
+								/>
 							</button>
 						{/each}
 					</div>

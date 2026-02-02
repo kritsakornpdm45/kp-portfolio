@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { profile, socialLinks } from '$lib/data';
+	import { socialLinks } from '$lib/data';
+	import { profile } from '$lib/profile';
 </script>
 
 <footer class="border-t border-white/10 px-6 py-12">

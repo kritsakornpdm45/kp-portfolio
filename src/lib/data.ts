@@ -1,13 +1,4 @@
-export const profile = {
-	name: 'Kritsakorn',
-	role: 'Full-Stack Developer',
-	tagline: 'Building products that users love',
-	bio: 'Passionate software engineer with 3+ years of experience crafting high-performance web applications. I specialize in turning complex problems into elegant, scalable solutions.',
-	avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=kritsakorn&backgroundColor=3b82f6',
-	status: 'Available for work',
-	location: 'Thailand',
-	email: 'hello@example.com'
-};
+export { profile } from './profile';
 
 export const stats = [
 	{ value: '3+', label: 'Years Experience' },
@@ -18,18 +9,18 @@ export const stats = [
 
 export const projects = [
 	{
-		title: 'E-Commerce Platform',
+		title: 'AC Sport Website',
 		description:
-			'A full-featured e-commerce solution with real-time inventory, payment processing, and analytics dashboard.',
+			'A high-performance sports equipment e-commerce platform with a focus on user experience and speed.',
 		longDescription:
-			'A comprehensive e-commerce platform built for high-scale retail. Features include real-time inventory tracking, multi-provider payment integration (Stripe, PayPal), automated tax calculation, and a powerful analytics dashboard for sales insights.',
-		image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop',
+			'AC Sport is a modern e-commerce solution tailored for sports enthusiasts. Built with performance in mind, it features seamless navigation, quick-loading product galleries using WebP formats, and a responsive design that works flawlessly across all devices.',
+		image: '/images/projects/acsport/acsport1.webp',
 		gallery: [
-			'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop',
-			'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=800&h=600&fit=crop',
-			'https://images.unsplash.com/photo-1556742031-c6961e8560b0?w=800&h=600&fit=crop'
+			'/images/projects/acsport/acsport1.webp',
+			'/images/projects/acsport/acsport2.webp',
+			'/images/projects/acsport/acsport3.webp'
 		],
-		tags: ['Next.js', 'Stripe', 'PostgreSQL', 'Redis'],
+		tags: ['SvelteKit', 'TailwindCSS', 'WebP', 'Vite'],
 		liveUrl: '#',
 		githubUrl: '#',
 		featured: true
@@ -96,7 +87,11 @@ export const skillCategories = [
 			{ name: 'React', icon: 'react', level: 95 },
 			{ name: 'Svelte', icon: 'svelte', level: 90 },
 			{ name: 'TypeScript', icon: 'ts', level: 92 },
-			{ name: 'Tailwind', icon: 'tailwindcss', level: 95 }
+			{ name: 'Next.js', icon: 'nextjs', level: 88 },
+			{ name: 'Vue', icon: 'vue', level: 85 },
+			{ name: 'Tailwind', icon: 'tailwindcss', level: 95 },
+			{ name: 'Redux', icon: 'redux', level: 82 },
+			{ name: 'Sass', icon: 'sass', level: 85 }
 		]
 	},
 	{
@@ -105,8 +100,12 @@ export const skillCategories = [
 		color: 'purple',
 		skills: [
 			{ name: 'Node.js', icon: 'nodejs', level: 90 },
+			{ name: 'NestJS', icon: 'nestjs', level: 85 },
+			{ name: 'Go', icon: 'go', level: 80 },
 			{ name: 'Python', icon: 'python', level: 85 },
 			{ name: 'PostgreSQL', icon: 'postgresql', level: 88 },
+			{ name: 'MySQL', icon: 'mysql', level: 85 },
+			{ name: 'Redis', icon: 'redis', level: 82 },
 			{ name: 'GraphQL', icon: 'graphql', level: 80 }
 		]
 	},
@@ -116,7 +115,11 @@ export const skillCategories = [
 		color: 'cyan',
 		skills: [
 			{ name: 'Docker', icon: 'docker', level: 85 },
+			{ name: 'Kubernetes', icon: 'kubernetes', level: 75 },
 			{ name: 'AWS', icon: 'aws', level: 82 },
+			{ name: 'GCP', icon: 'gcp', level: 78 },
+			{ name: 'Terraform', icon: 'terraform', level: 72 },
+			{ name: 'Nginx', icon: 'nginx', level: 80 },
 			{ name: 'GitHub Actions', icon: 'githubactions', level: 88 },
 			{ name: 'Linux', icon: 'linux', level: 80 }
 		]
@@ -129,7 +132,11 @@ export const skillCategories = [
 			{ name: 'Git', icon: 'git', level: 95 },
 			{ name: 'Figma', icon: 'figma', level: 75 },
 			{ name: 'VS Code', icon: 'vscode', level: 95 },
-			{ name: 'Postman', icon: 'postman', level: 85 }
+			{ name: 'Postman', icon: 'postman', level: 85 },
+			{ name: 'Vite', icon: 'vite', level: 90 },
+			{ name: 'Jest', icon: 'jest', level: 82 },
+			{ name: 'Storybook', icon: 'storybook', level: 78 },
+			{ name: 'Webpack', icon: 'webpack', level: 75 }
 		]
 	}
 ];
