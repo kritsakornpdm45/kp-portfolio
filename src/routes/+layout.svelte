@@ -7,11 +7,11 @@
 
 	// SEO Configuration
 	const siteConfig = {
-		title: 'Flow Design | Software Engineer Portfolio',
+		title: 'Kritsakorn | Software Engineer Portfolio',
 		description:
 			'Crafting high-performance web applications and scalable backend systems. Full-stack developer specializing in React, Svelte, Node.js, and cloud services.',
 		keywords: 'software engineer, full-stack developer, web developer, React, Svelte, Node.js',
-		author: 'Flow Design'
+		author: 'Kritsakorn piddam'
 	};
 </script>
 
