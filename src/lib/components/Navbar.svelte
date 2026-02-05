@@ -3,7 +3,7 @@
 
 	// Navigation items
 	const navItems = [
-		{ href: '#resume', label: 'About' },
+		{ href: '#hero', label: 'About' },
 		{ href: '#projects', label: 'Projects' },
 		{ href: '#skills', label: 'Skills' },
 		{ href: '#education', label: 'Education' }
@@ -50,7 +50,7 @@
 	<div class="mx-auto max-w-7xl px-6">
 		<div class="flex h-20 items-center justify-between">
 			<!-- Logo -->
-			<a href="#resume" class="group flex items-center gap-3">
+			<a href="#hero" class="group flex items-center gap-3">
 				<div
 					class="flex h-10 w-10 items-center justify-center rounded-xl bg-linear-to-br from-blue-500 to-purple-500 transition-transform group-hover:scale-110"
 				>

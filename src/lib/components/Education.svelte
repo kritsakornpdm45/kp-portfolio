@@ -54,9 +54,6 @@
 
 							<!-- GPA & Achievements -->
 							<div class="flex flex-wrap items-center gap-2">
-								<span class="rounded-full bg-green-500/20 px-3 py-1 text-xs text-green-400">
-									GPA: {edu.gpa}
-								</span>
 								{#each edu.achievements as achievement}
 									<span class="rounded-full bg-purple-500/20 px-3 py-1 text-xs text-purple-400">
 										{achievement}

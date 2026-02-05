@@ -22,7 +22,7 @@
 				Featured <span class="gradient-text">Projects</span>
 			</h2>
 			<p class="mx-auto max-w-2xl text-gray-400">
-				A collection of projects I've built — from web apps to mobile solutions
+				A showcase of my recent work, featuring web applications and system solutions.
 			</p>
 		</div>
 

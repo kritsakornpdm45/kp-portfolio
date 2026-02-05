@@ -1,10 +1,10 @@
 export { profile } from './profile';
 
 export const stats = [
-	{ value: '3+', label: 'Years Experience' },
-	{ value: '50+', label: 'Projects Completed' },
-	{ value: '20+', label: 'Happy Clients' },
-	{ value: '99%', label: 'Success Rate' }
+	{ value: '1+', label: 'Years Experience' },
+	{ value: '500+', label: 'Cups of Coffee' },
+	{ value: '20+', label: 'Frameworks Tried' },
+	{ value: '∞', label: 'Passion to Learn' }
 ];
 
 export const projects = [
@@ -121,7 +121,6 @@ export const skillCategories = [
 			{ name: 'Svelte', icon: 'svelte', level: 90 },
 			{ name: 'TypeScript', icon: 'ts', level: 92 },
 			{ name: 'Next.js', icon: 'nextjs', level: 88 },
-			{ name: 'Vue', icon: 'vue', level: 85 },
 			{ name: 'Tailwind', icon: 'tailwindcss', level: 95 },
 			{ name: 'Redux', icon: 'redux', level: 82 },
 			{ name: 'Sass', icon: 'sass', level: 85 }
@@ -133,8 +132,6 @@ export const skillCategories = [
 		color: 'purple',
 		skills: [
 			{ name: 'Node.js', icon: 'nodejs', level: 90 },
-			{ name: 'NestJS', icon: 'nestjs', level: 85 },
-			{ name: 'Go', icon: 'go', level: 80 },
 			{ name: 'Python', icon: 'python', level: 85 },
 			{ name: 'PostgreSQL', icon: 'postgresql', level: 88 },
 			{ name: 'MySQL', icon: 'mysql', level: 85 },
@@ -148,7 +145,6 @@ export const skillCategories = [
 		color: 'cyan',
 		skills: [
 			{ name: 'Docker', icon: 'docker', level: 85 },
-			{ name: 'Kubernetes', icon: 'kubernetes', level: 75 },
 			{ name: 'AWS', icon: 'aws', level: 82 },
 			{ name: 'GCP', icon: 'gcp', level: 78 },
 			{ name: 'Terraform', icon: 'terraform', level: 72 },
@@ -167,8 +163,6 @@ export const skillCategories = [
 			{ name: 'VS Code', icon: 'vscode', level: 95 },
 			{ name: 'Postman', icon: 'postman', level: 85 },
 			{ name: 'Vite', icon: 'vite', level: 90 },
-			{ name: 'Jest', icon: 'jest', level: 82 },
-			{ name: 'Storybook', icon: 'storybook', level: 78 },
 			{ name: 'Webpack', icon: 'webpack', level: 75 }
 		]
 	}
@@ -176,19 +170,25 @@ export const skillCategories = [
 
 export const education = [
 	{
-		degree: 'Bachelor of Computer Science',
+		degree: 'Bachelor of Computer Engineering',
 		institution: 'Prince of Songkla University',
-		location: 'Hat Yai, Thailand',
-		year: '2020 - 2024',
-		gpa: '3.75',
-		achievements: ["Dean's List", 'Best Capstone Project']
+		location: 'Songkhla, Thailand',
+		year: '2020 - 2026',
+		achievements: ['Specialized in Web Technologies']
+	},
+	{
+		degree: 'High School Diploma (Science-Math Program)',
+		institution: 'Ranod School',
+		location: 'Songkhla, Thailand',
+		year: '2014 - 2020',
+		achievements: []
 	}
 ];
 
 export const socialLinks = [
-	{ name: 'GitHub', url: 'https://github.com', icon: 'github' },
-	{ name: 'LinkedIn', url: 'https://linkedin.com', icon: 'linkedin' },
-	{ name: 'Twitter', url: 'https://twitter.com', icon: 'twitter' }
+	{ name: 'GitHub', url: 'https://github.com/kritsakornpdm45', icon: 'github' },
+	{ name: 'LinkedIn', url: 'https://www.linkedin.com/in/kritsakorn-piddam-2316082a2/', icon: 'linkedin' },
+	{ name: 'Email', url: 'mailto:kritsakorn.pdm@gmail.com', icon: 'email' }
 ];
 
 export type Project = (typeof projects)[0];

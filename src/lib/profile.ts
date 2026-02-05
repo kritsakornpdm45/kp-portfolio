@@ -1,10 +1,10 @@
 export const profile = {
 	name: 'Kritsakorn',
-	role: 'Full-Stack Developer',
+	role: 'Software Engineer',
 	tagline: 'Building products that users love',
-	bio: 'Passionate software engineer with 3+ years of experience crafting high-performance web applications. I specialize in turning complex problems into elegant, scalable solutions.',
-	avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=kritsakorn&backgroundColor=3b82f6',
+	bio: 'Passionate software engineer with 1+ years of experience crafting high-performance web applications. I specialize in turning complex problems into elegant, scalable solutions.',
+	avatar: '/images/profile/avatar.webp',
 	status: 'Available for work',
-	location: 'Thailand',
-	email: 'hello@example.com'
+	location: 'Songkhla, Thailand',
+	email: 'kritsakorn.pdm@gmail.com'
 };
