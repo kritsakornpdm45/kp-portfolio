@@ -9,73 +9,106 @@ export const stats = [
 
 export const projects = [
 	{
-		title: 'AC Sport Website',
+		title: 'AC Sport Booking System',
 		description:
-			'A high-performance sports equipment e-commerce platform with a focus on user experience and speed.',
+			'Full-stack sports court booking app with conflict detection, API payment integration, and automated management.',
 		longDescription:
-			'AC Sport is a modern e-commerce solution tailored for sports enthusiasts. Built with performance in mind, it features seamless navigation, quick-loading product galleries using WebP formats, and a responsive design that works flawlessly across all devices.',
+			'A comprehensive sports facility management system. Features include slot-based booking with real-time conflict detection, integrated API payment processing, session-based authentication with RBAC, an admin dashboard for managing bookings and users, and automated cleanup of pending bookings via cron jobs.',
 		image: '/images/projects/acsport/acsport1.webp',
 		gallery: [
 			'/images/projects/acsport/acsport1.webp',
 			'/images/projects/acsport/acsport2.webp',
 			'/images/projects/acsport/acsport3.webp'
 		],
-		tags: ['SvelteKit', 'TailwindCSS', 'WebP', 'Vite'],
-		liveUrl: '#',
-		githubUrl: '#',
+		features: [
+			'Real-time conflict detection',
+			'API payment integration',
+			'Automated management'
+		],
+		tags: ['SvelteKit', 'TypeScript', 'MongoDB', 'Docker', 'RBAC', 'API Payment'],
+		liveUrl: 'https://acsportcenter.com/',
+		githubUrl: '',
 		featured: true
 	},
 	{
-		title: 'AI Chat Application',
+		title: 'ODC Dental Clinic',
 		description:
-			'Real-time chat platform powered by AI with smart responses and multi-language support.',
+			'Full-stack dental clinic platform featuring a custom CMS, SEO optimization, and high-performance image processing.',
 		longDescription:
-			"An intelligent chat application utilizing OpenAI's GPT-4 API to provide smart, context-aware responses. Includes features like real-time translation, conversation summarization, and secure end-to-end encryption.",
-		image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop',
+			'A comprehensive web application for Dr. Oh Dental Clinic. Features include a custom CMS for managing articles and case reviews, server-side rendering for maximum SEO impact, automated WebP image optimization, and secure session-based authentication built on SvelteKit and Drizzle ORM.',
+		image: '/images/projects/odc/odc1.webp',
 		gallery: [
-			'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop',
-			'https://images.unsplash.com/photo-1587560699334-cc4da63c2549?w=800&h=600&fit=crop',
-			'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop'
+			'/images/projects/odc/odc1.webp',
+			'/images/projects/odc/odc2.webp',
+			'/images/projects/odc/odc3.webp'
 		],
-		tags: ['React', 'OpenAI', 'Socket.io', 'Node.js'],
-		liveUrl: '#',
-		githubUrl: '#',
+		features: [
+			'Custom CMS for dynamic content management',
+			'SEO-optimized with Server-Side Rendering',
+			'Secure session-based authentication'
+		],
+		tags: ['SvelteKit', 'SQLite', 'Drizzle ORM', 'TailwindCSS'],
+		liveUrl: 'https://ohdentalclinic.com/',
+		githubUrl: '',
 		featured: true
 	},
 	{
-		title: 'SaaS Dashboard',
+		title: 'Modern E-commerce Platform',
 		description:
-			'Analytics dashboard with real-time data visualization and team collaboration features.',
+			'A scalable, high-performance e-commerce solution built with Next.js 15 and Payload CMS 3.0, featuring a robust PostgreSQL database.',
 		longDescription:
-			'A data-heavy SaaS dashboard providing visualizations for user engagement metrics. Built with Svelte and D3.js for high-performance rendering of complex charts and graphs.',
-		image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+			'A high-performance e-commerce solution utilizing Next.js 15 App Router and React 19. Integrated with Payload CMS 3.0, PostgreSQL, and Vercel Blob, it features a modular TypeScript architecture, TailwindCSS 4 styling, and a flexible block-based page builder.',
+		image: '/images/projects/e-commerce/ecom1.webp',
 		gallery: [
-			'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
-			'https://images.unsplash.com/photo-1543286386-713df548e9cc?w=800&h=600&fit=crop',
-			'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop'
+			'/images/projects/e-commerce/ecom1.webp',
+			'/images/projects/e-commerce/ecom2.webp',
+			'/images/projects/e-commerce/ecom3.webp',
+			'/images/projects/e-commerce/ecom4.webp'
 		],
-		tags: ['Svelte', 'D3.js', 'Supabase'],
+		features: [
+			'Payload CMS 3.0 ',
+			'PostgreSQL Database',
+			'Vercel Blob Cloud Storage',
+			'Product & Category Management System',
+			'Responsive Styling with TailwindCSS 4'
+		],
+		tags: [
+			'Next.js',
+			'Payload CMS',
+			'PostgreSQL',
+			'TypeScript',
+			'TailwindCSS',
+			'React'
+		],
 		liveUrl: '#',
-		githubUrl: '#',
-		featured: false
+		githubUrl: 'https://github.com/kritsakornpdm45/web-ecommerce.git',
+		featured: true
 	},
 	{
-		title: 'Mobile Banking App',
+		title: 'Walkwing X Bangkok Design Week',
 		description:
-			'Secure mobile banking solution with biometric authentication and instant transfers.',
+		'Interactive event platform with real-time participation tracking and admin analytics.',
 		longDescription:
-			'A React Native mobile application focusing on security and ease of use. Features biometric login (FaceID/TouchID), QR code payments, and real-time transaction notifications via WebSocket.',
-		image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop',
+		'A full-stack web application for the Bangkok Design Week 2026 "Journey" campaign. It features QR-based station check-ins, gamified user progression (Move, Rest, Reset, Nourish), and a comprehensive admin dashboard for monitoring real-time user engagement and leaderboard metrics. Built with SvelteKit and MongoDB for scalable data management.',
+		image: '/images/projects/bdw/bdw1.webp',
 		gallery: [
-			'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop',
-			'https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=800&h=600&fit=crop',
-			'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop'
+			'/images/projects/bdw/bdw1.webp',
+			'/images/projects/bdw/bdw2.webp',
+			'/images/projects/bdw/bdw3.webp',
+			'/images/projects/bdw/bdw4.webp'
 		],
-		tags: ['React Native', 'Node.js', 'MongoDB'],
-		liveUrl: '#',
-		githubUrl: '#',
+		features: [
+		'QR Station Scanning & Validation',
+		'Real-time Leaderboard & Scoring',
+		'Admin Analytics Dashboard',
+		'Excel Data Export'
+		],
+		tags: ['SvelteKit', 'MongoDB', 'TailwindCSS', 'TypeScript'],
+		liveUrl: '',
+		githubUrl: '',
 		featured: false
-	}
+	},
+	
 ];
 
 export const skillCategories = [
