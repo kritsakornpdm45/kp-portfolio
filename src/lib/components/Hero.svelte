@@ -139,7 +139,7 @@
 									<img
 										src={profile.avatar}
 										alt={profile.name}
-										class="relative h-32 w-32 rounded-full border-4 border-[#0a0a0a] bg-gray-800"
+										class="relative h-32 w-32 rounded-full border-4 border-[#0a0a0a] bg-gray-800 object-cover"
 									/>
 								</div>
 							</div>
